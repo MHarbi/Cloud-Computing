@@ -15,10 +15,9 @@ public class AddressCountMapper
     
         String line = value.toString();
         line = line.replace("\"\"","-");
-        // line=line.split("GET ")[1];
-        // System.out.println(line);
+        
         String request = StringUtils.substringBetween(line , "\"", "\"");
-        String[] request_s = request.split(" ");
+        String[] request_s = request.split("\\s+");
         String address = "";
         try{
         if(request_s.length >= 1)
