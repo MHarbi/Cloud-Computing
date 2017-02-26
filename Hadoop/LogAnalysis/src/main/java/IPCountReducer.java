@@ -11,18 +11,12 @@ public class IPCountReducer
   @Override
   public void reduce(Text key, Iterable<IntWritable> values, Context context)
       throws IOException, InterruptedException {
-    Configuration conf = context.getConfiguration();
-    if(key.equals(new Text(conf.get("IP")))) {
 
-       int sum = 0;
-    for (IntWritable value : values) {
-      sum += value.get();
-    }
+        int sum = 0;
+        for (IntWritable value : values) {
+            sum += value.get();
+        }
 
         context.write(key, new IntWritable(sum));        
     }
-   
-    
-    
-  }
 }

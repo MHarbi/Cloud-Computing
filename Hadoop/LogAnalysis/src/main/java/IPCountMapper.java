@@ -4,8 +4,7 @@ import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
-
-
+import org.apache.hadoop.conf.*;
 
 public class IPCountMapper
   extends Mapper<LongWritable, Text, Text, IntWritable> {
@@ -15,8 +14,12 @@ public class IPCountMapper
       throws IOException, InterruptedException {
     
         String line = value.toString();
+        String ip  = new String(line.split("\\s+")[0]);
 
-        context.write(new Text(line.split("\\s+")[0]), new IntWritable(1));
-    
-  }
+        Configuration conf = context.getConfiguration();
+        if(ip.equals(new String(conf.get("IP")))) {
+
+            context.write(new Text(ip), new IntWritable(1));
+        }
+    }
 }

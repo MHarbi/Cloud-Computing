@@ -5,11 +5,12 @@ import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.conf.*;
+
 public class IPCount {
 
   public static void main(String[] args) throws Exception {
     if (args.length != 3) {
-      System.err.println("Usage: Access_log <input path> <output path> <IP Address>");
+      System.err.println("Usage: IPCount <input path> <output path> <IP Address>");
       System.exit(-1);
     }
     Configuration conf = new Configuration();
