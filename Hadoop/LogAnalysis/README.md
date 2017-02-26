@@ -2,16 +2,33 @@
 
 Using Hadoop to analyze the access_log.
 
-1. mvn clean install
+## JAVA Files Build
+You can use _Maven_ to build the codes as:
+```
+mvn clean install
+```
 
-2. hadoop jar LogAnalysis.jar AddressHitsCount input_file output_file "/path/to/count"
-Example: hadoop jar LogAnalysis.jar AddressHitsCount access_log output1 "/assets/img/home-logo.png"
+## Answering Questions
+1. How many hits were made to the website item “/assets/img/home-logo.png”?
+```
+# hadoop jar LogAnalysis.jar AddressHitsCount input_file output_file "/path/to/count"
+hadoop jar LogAnalysis.jar AddressHitsCount access_log output1 "/assets/img/home-logo.png"
+```
 
-3. hadoop jar LogAnalysis.jar IPCount input_file output_file "0.0.0.0"
+2. How many hits were made from the IP: 10.153.239.5?
+```
+# hadoop jar LogAnalysis.jar IPCount input_file output_file "0.0.0.0"
 hadoop jar LogAnalysis.jar IPCount access_log output2 "10.153.239.5"
+```
 
-4. hadoop jar LogAnalysis.jar AddressHitsMost input_file output_file
-Example: hadoop jar LogAnalysis.jar AddressHitsMost access_log output3
+3. Which path in the website has been hit most? How many hits were made to the path?
+```
+# hadoop jar LogAnalysis.jar AddressHitsMost input_file output_file
+hadoop jar LogAnalysis.jar AddressHitsMost access_log output3
+```
 
-5. hadoop jar LogAnalysis.jar IPMax input_file output_file
-Example: hadoop jar LogAnalysis.jar IPMax access_log output4
+4. Which IP accesses the website most? How many accesses were made by it?
+```
+# hadoop jar LogAnalysis.jar IPMax input_file output_file
+hadoop jar LogAnalysis.jar IPMax access_log output4
+```
