@@ -1,2 +1,5 @@
 /Users/mharbi/Documents/INFSCI-2750/Cloud-Computing/Spark/DataAnalysis/src/main/java/WordCount.java
 /Users/mharbi/Documents/INFSCI-2750/Cloud-Computing/Spark/DataAnalysis/src/main/java/LastfmAnalysis.java
+/Users/mharbi/Documents/INFSCI-2750/Cloud-Computing/Spark/DataAnalysis/src/main/java/LogAnalysis/AddressHitsMost.java
+/Users/mharbi/Documents/INFSCI-2750/Cloud-Computing/Spark/DataAnalysis/src/main/java/LogAnalysis/AddressHitsCount.java
+/Users/mharbi/Documents/INFSCI-2750/Cloud-Computing/Spark/DataAnalysis/src/main/java/LogAnalysis/IPMax.java
