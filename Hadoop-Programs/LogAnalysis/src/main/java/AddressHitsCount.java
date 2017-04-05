@@ -15,15 +15,19 @@ public class AddressHitsCount {
     }
     else {
       Configuration conf = new Configuration();
+      // pass address to the configuration to be read by the mapper/reducer
       conf.set("address", args[2]);
 
+      // job configuration
       Job job = new Job(conf);
       job.setJarByClass(AddressHitsCount.class);
       job.setJobName("AddressHitsCount");
 
+      // specify input/output files
       FileInputFormat.addInputPath(job, new Path(args[0]));
       FileOutputFormat.setOutputPath(job, new Path(args[1]));
       
+      // set classes of Mapper and Reducer
       job.setMapperClass(AddressHitsCountMapper.class);
       job.setReducerClass(AddressHitsCountReducer.class);
 

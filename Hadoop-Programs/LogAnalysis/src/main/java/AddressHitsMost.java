@@ -18,13 +18,16 @@ public class AddressHitsMost {
         else {
             Configuration conf = new Configuration();
 
+            // job configuration
             Job job = new Job(conf);
             job.setJarByClass(AddressHitsMost.class);
             job.setJobName("AddressHitsMost");
 
+            // specify input/output files
             FileInputFormat.addInputPath(job, new Path(args[0]));
             FileOutputFormat.setOutputPath(job, new Path(args[1]));
             
+            // set classes of Mapper and Reducer
             job.setMapperClass(AddressHitsMostMapper.class);
             job.setReducerClass(AddressHitsMostReducer.class);
 

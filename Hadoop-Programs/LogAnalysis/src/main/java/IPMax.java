@@ -18,13 +18,16 @@ public class IPMax {
         else {
 
             Configuration conf = new Configuration();
+            // job configuration
             Job job = new Job(conf);
             job.setJarByClass(IPMax.class);
             job.setJobName("IPMax");
 
+            // specify input/output files
             FileInputFormat.addInputPath(job, new Path(args[0]));
             FileOutputFormat.setOutputPath(job, new Path(args[1]));
             
+            // set classes of Mapper and Reducer
             job.setMapperClass(IPMaxMapper.class);
             job.setReducerClass(IPMaxReducer.class);
 

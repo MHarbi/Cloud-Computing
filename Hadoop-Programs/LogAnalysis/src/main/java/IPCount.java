@@ -15,15 +15,19 @@ public class IPCount {
       System.exit(-1);
     }
     Configuration conf = new Configuration();
+    // pass IP to the configuration to be read by the mapper/reducer
     conf.set("IP", args[2]);
 
+    // job configuration
     Job job = new Job(conf);
     job.setJarByClass(IPCount.class);
     job.setJobName("IPCount");
 
+    // specify input/output files
     FileInputFormat.addInputPath(job, new Path(args[0]));
     FileOutputFormat.setOutputPath(job, new Path(args[1]));
     
+    // set classes of Mapper and Reducer
     job.setMapperClass(IPCountMapper.class);
     job.setReducerClass(IPCountReducer.class);
 
