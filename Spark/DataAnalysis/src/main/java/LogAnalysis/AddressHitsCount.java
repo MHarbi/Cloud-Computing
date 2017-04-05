@@ -81,8 +81,11 @@ public class AddressHitsCount {
 
                 if(request_s.length >= 1)
                     address = request_s[1];
-
-                return Arrays.asList(address).iterator();
+                
+                if(address == urlAddress)
+                    return Arrays.asList(address).iterator();
+                else
+                    return null;
                 
             }).cache();
         }
@@ -98,7 +101,10 @@ public class AddressHitsCount {
                 if(request_s.length >= 1)
                     address = request_s[1];
 
-                return Arrays.asList(address).iterator();
+                if(address == urlAddress)
+                    return Arrays.asList(address).iterator();
+                else
+                    return null;
                 
             });
         }
