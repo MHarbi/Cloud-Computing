@@ -9,7 +9,8 @@ public class AddressHitsCount {
 
   public static void main(String[] args) throws Exception {
     if (args.length != 3) {
-      System.err.println("Usage: AddressHitsCount <input path> <output path> <address>");
+      System.err.println("ERROR: Usage: AddressHitsCount <input path> <output path> <address>");
+      System.err.println("EX: hadoop jar LogAnalysis.jar AddressHitsCount access_log output1 '/assets/img/home-logo.png'");
       System.exit(-1);
     }
     else {

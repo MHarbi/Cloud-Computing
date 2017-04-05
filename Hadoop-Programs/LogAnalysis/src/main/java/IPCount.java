@@ -10,7 +10,8 @@ public class IPCount {
 
   public static void main(String[] args) throws Exception {
     if (args.length != 3) {
-      System.err.println("Usage: IPCount <input path> <output path> <IP Address>");
+      System.err.println("ERROR: Usage: IPCount <input path> <output path> <IP Address>");
+      System.err.println("EX: hadoop jar LogAnalysis.jar IPCount access_log output2 '10.153.239.5'");
       System.exit(-1);
     }
     Configuration conf = new Configuration();

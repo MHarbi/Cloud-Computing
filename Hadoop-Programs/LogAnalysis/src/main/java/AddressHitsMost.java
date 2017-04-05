@@ -11,7 +11,8 @@ public class AddressHitsMost {
   public static void main(String[] args) throws Exception {
     
         if (args.length != 2) {
-            System.err.println("Usage: AddressHitsMost <input path> <output path>");
+            System.err.println("ERROR: Usage: AddressHitsMost <input path> <output path>");
+            System.err.println("EX: hadoop jar LogAnalysis.jar AddressHitsMost access_log output3");
             System.exit(-1);
         }
         else {

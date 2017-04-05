@@ -11,7 +11,8 @@ public class IPMax {
     public static void main(String[] args) throws Exception {
 
         if (args.length != 2) {
-            System.err.println("Usage: IPMax <input path> <output path>");
+            System.err.println("ERROR: Usage: IPMax <input path> <output path>");
+            System.err.println("EX: hadoop jar LogAnalysis.jar IPMax access_log output4");
             System.exit(-1);
         }
         else {
